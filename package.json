@@ -1,0 +1,24 @@
+{
+    "name": "node-sns",
+    "version": "0.0.1",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app",
+        "test": "jest --detectOpenHandles"
+    },
+    "author": "AliceOfSNU",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^5.2.0",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.3",
+        "express-session": "^1.17.3",
+        "mybatis-mapper": "^0.6.8",
+        "mysql2": "^2.3.3",
+        "nunjucks": "^3.2.3"
+    },
+    "devDependencies": {
+        "jest": "^29.3.1",
+        "nodemon": "^2.0.20"
+    }
+}

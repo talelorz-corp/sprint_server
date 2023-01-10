@@ -18,7 +18,7 @@ module.exports = () => {
             else {
             //user is null new user.
                 console.log("repository found null")
-                user = {serviceid: profile.id, provider:'KAKAO', userid: null}
+                user = {snsId: profile.id, provider:'KAKAO', userId: null}
                 done(null, user)
             }
         } catch (error){

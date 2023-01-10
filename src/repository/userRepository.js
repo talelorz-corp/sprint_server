@@ -36,7 +36,7 @@ exports.createUser = async(user) => {
         userId: user.userId,
         firstName: user.firstName,
         lastName: user.lastName,
-        gender: 0,
+        gender: user.gender,
     })
     try{
         await datasource.query(query)

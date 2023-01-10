@@ -29,7 +29,6 @@ describe('testuser', () => {
         //test retrieve
         try{
             const foundUser = await userRepository.findUserSNS(mockUser.snsId, mockUser.provider)
-            console.log(foundUser)
             expect(foundUser.userId).toEqual(mockUser.userId)
             expect(foundUser.firstName).toEqual(mockUser.firstName)
             expect(foundUser.lastName).toEqual(mockUser.lastName)
@@ -42,6 +41,27 @@ describe('testuser', () => {
         
     })
 
+    //create with incomplete form
+    test('create with incomplete form', async () => {
+        //given
+        const mockUser = {
+            serviceId: null,
+            userId : "",
+            firstName: "민지",
+            lastName: "김",
+            snsId : "2616915419",
+            provider: "KAKAO",
+            gender: 0,
+        }
+
+        //should throw
+        try{
+            await userRepository.createUser(mockUser)
+        } catch(e) {
+            expect(e).toMatch('incomplete-user-object')
+        }
+
+    })
 
     afterAll(()=>{
         userRepository.close() //closes all connections in pool

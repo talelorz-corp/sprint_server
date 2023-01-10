@@ -15,7 +15,9 @@
         "express-session": "^1.17.3",
         "mybatis-mapper": "^0.6.8",
         "mysql2": "^2.3.3",
-        "nunjucks": "^3.2.3"
+        "nunjucks": "^3.2.3",
+        "passport": "^0.6.0",
+        "passport-kakao": "^1.0.1"
     },
     "devDependencies": {
         "jest": "^29.3.1",

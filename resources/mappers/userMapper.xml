@@ -11,15 +11,15 @@ to escape brackets like <>, [], use CDATA
 
     <!-- add a single user -->
     <insert id="createUser">
-        INSERT INTO users VALUES
-        (#{userId}, #{username})   
+        INSERT INTO users (serviceId, snsId, provider, userId, firstName, lastName, gender)
+        VALUES (#{serviceId}, #{snsId}, #{provider}, #{userId}, #{firstName}, #{lastName}, #{gender})  
     </insert>
 
     <!-- select a single user with id -->
-    <select id="selectUser">
+    <select id="findUserSNS">
         SELECT * FROM users
         WHERE
-            uid = #{userId}
+            snsId = #{snsId} AND provider = #{provider}
     </select>
 
     <!-- delete a single user with id -->

@@ -1,9 +1,15 @@
 /*CREATE TABLE `talelorz`.`users` (
-  `usrerId` INT NOT NULL,
-  `username` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`usrerId`),
-  UNIQUE INDEX `usrerId_UNIQUE` (`usrerId` ASC) VISIBLE);
-  */
-
-/*SELECT * FROM `talelorz`.`users`;*/
-DELETE FROM `talelorz`.`users`
+  `serviceId` VARCHAR(45) NULL DEFAULT NULL,
+  `snsId` VARCHAR(60) NULL DEFAULT NULL,
+  `provider` VARCHAR(45) NULL DEFAULT NULL,
+  `userId` VARCHAR(45) NOT NULL,
+  `firstName` VARCHAR(45) NOT NULL,
+  `lastName` VARCHAR(45) NOT NULL,
+  `gender` INT NOT NULL,
+  `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE INDEX `serviceId_UNIQUE` (`serviceId` ASC) VISIBLE,
+  PRIMARY KEY (`userId`),
+  UNIQUE INDEX `userId_UNIQUE` (`userId` ASC) VISIBLE)
+DEFAULT CHARACTER SET = utf8mb4;
+*/
+SELECT * FROM `talelorz`.`users`

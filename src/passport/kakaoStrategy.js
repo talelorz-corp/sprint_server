@@ -7,7 +7,7 @@ module.exports = () => {
         clientID: process.env.KAKAO_ID,
         callbackURL: '/auth/kakao/callback',
     }, async(accessToken, refreshToken, profile, done) => {
-        
+        console.log("accessToken", accessToken)
         //tries to find a user
         try{
             let user = await userRepository.findUserSNS(profile.id, 'KAKAO')

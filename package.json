@@ -9,6 +9,7 @@
     "author": "AliceOfSNU",
     "license": "MIT",
     "dependencies": {
+        "axios": "^1.2.2",
         "chalk": "^5.2.0",
         "cookie-parser": "^1.4.6",
         "dotenv": "^16.0.3",
@@ -17,7 +18,8 @@
         "mysql2": "^2.3.3",
         "nunjucks": "^3.2.3",
         "passport": "^0.6.0",
-        "passport-kakao": "^1.0.1"
+        "passport-kakao": "^1.0.1",
+        "passport-local": "^1.0.0"
     },
     "devDependencies": {
         "jest": "^29.3.1",

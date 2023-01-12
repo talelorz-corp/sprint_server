@@ -1,5 +1,5 @@
 const express = require('express')
-const { renderProfile, renderJoin, renderMain} = require('../controllers/page')
+const {postUploadHandler, postPageHandler} = require('../controllers/post')
 const router = express.Router()
 
 router.use((req, res, next)=>{
@@ -10,8 +10,7 @@ router.use((req, res, next)=>{
     next()
 })
 
-router.get('/profile', renderProfile)
-router.get('/join', renderJoin)
-router.get('/', renderMain)
-
+router.post('/upload', postUploadHandler)
+router.post('/getposts', postPageHandler)
+router.get('/', (req, res)=> res.send('hello'))
 module.exports = router

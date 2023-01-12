@@ -78,7 +78,7 @@ exports.oAuthLoginHandler = async (req, res, next)=>{
 
 }
 
-exports.oAuthSignupHandler = async(req, res, next)=>{
+exports.oAuthSignupHandler = async(req, res, next)=>{  
     //is authenticated by SNS auth provider?
     if(!req.isAuthenticated()) {
         return res.status(403).send('20003')
@@ -107,7 +107,7 @@ exports.oAuthSignupHandler = async(req, res, next)=>{
     } catch(error){
         return res.status(401).send('signup error')
     }
-    console.log("registered new user ", req.user.userId)
+    console.log("registered new user ", req.body.userId)
     //should sign out and request login again.
     return req.logout(()=>{
         return res.json(user)
